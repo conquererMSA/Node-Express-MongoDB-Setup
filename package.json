@@ -1,0 +1,30 @@
+{
+  "name": "express-mongodb-initial-setup",
+  "version": "1.0.0",
+  "description": "It's a initial project setup for Node-Express-MongoDB.There are use Husky, ESlint, Prettier.",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conquererMSA/Node-Express-MongoDB-Setup.git"
+  },
+  "keywords": [
+    "initial",
+    "setup"
+  ],
+  "author": "MSA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conquererMSA/Node-Express-MongoDB-Setup/issues"
+  },
+  "homepage": "https://github.com/conquererMSA/Node-Express-MongoDB-Setup#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongose": "^0.0.2-security"
+  }
+}
