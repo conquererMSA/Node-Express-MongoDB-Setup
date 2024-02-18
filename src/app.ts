@@ -8,6 +8,14 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+//**************************/
+// eslint-disable-next-line no-console, no-undef
+//console.log(process.env); ekhane env object ta pabo. env object e node-express er onek variable ache
+
+// eslint-disable-next-line no-console
+//console.log(app.get('env')) ekhane current environment ta pabo
+//******************* */
+
 //Application routes
 app.use('/api/v1/users', userRouter)
 

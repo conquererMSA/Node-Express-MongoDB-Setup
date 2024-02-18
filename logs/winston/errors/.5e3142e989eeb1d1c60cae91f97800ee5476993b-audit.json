@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\.5e3142e989eeb1d1c60cae91f97800ee5476993b-audit.json",
+    "files": [
+        {
+            "date": 1708251793139,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\16-18-02-2024-error.log",
+            "hash": "df6d3046c54690e7abec5728490cac64ac1086089ee47730752c36ce28b1581c"
+        }
+    ],
+    "hashType": "sha256"
+}
