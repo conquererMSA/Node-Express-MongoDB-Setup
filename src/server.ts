@@ -52,10 +52,10 @@ connectDB()
 // console.log(x) //for uncaughtException //uncaughtException app er zekuno zaygay hote pare
 //handled Signal Termination
 //SIGTERM is process by process manager like pm2
-// process.on('SIGTERM', () => {
-//   console.log('SIGTERM is dedected')
-//   infoLogger.info('SIGTERM is received')
-//   if (server) {
-//     server.close()
-//   }
-// })
+process.on('SIGTERM', () => {
+  console.log('SIGTERM is dedected')
+  infoLogger.info('SIGTERM is received')
+  if (server) {
+    server.close()
+  }
+})

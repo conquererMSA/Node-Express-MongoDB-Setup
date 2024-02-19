@@ -15,7 +15,7 @@ import { errorLogger } from '../shared/logger'
 const globalErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
   //ekahne environment zodi dev hoy tahole log gulu consloe e print hobe, ar environment production hole errorLogger er moddhye zabe ebong store hobe
   // eslint-disable-next-line no-console
-  // config?.env === 'development' ? console.log(error) : errorLogger.error(error)
+  config?.env === 'development' ? console.log(error) : errorLogger.error(error)
 
   let statusCode = 500
   let message = 'something went wrong'
