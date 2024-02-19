@@ -6,9 +6,19 @@
     "auditLog": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\.5e3142e989eeb1d1c60cae91f97800ee5476993b-audit.json",
     "files": [
         {
-            "date": 1708251793139,
-            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\16-18-02-2024-error.log",
-            "hash": "df6d3046c54690e7abec5728490cac64ac1086089ee47730752c36ce28b1581c"
+            "date": 1708356843413,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\21-19-02-2024-error.log",
+            "hash": "73d938801932eb21ba8468d9f94b807161ab429ec4a3b72e285eebbdea3eb3e7"
+        },
+        {
+            "date": 1708358478809,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\22-19-02-2024-error.log",
+            "hash": "5595c41c53f890728e1b852050f783149a4fcaf2503e485ff3a6893c3f52c0b2"
+        },
+        {
+            "date": 1708363069104,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\23-19-02-2024-error.log",
+            "hash": "b75d1f49b7001c01f8ed2ccdac6a1a94f34108170e669fdebd57c8e566122e9f"
         }
     ],
     "hashType": "sha256"

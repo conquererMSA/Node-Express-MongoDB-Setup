@@ -2,6 +2,7 @@ import { IUser } from './users.interface'
 import { User } from './users.model'
 import config from '../../../config'
 import { autoGenaretedUserId } from './users.utils'
+import ApiError from '../../../errors/ApiError'
 
 export const createUserService = async (user: IUser) => {
   //student password
@@ -13,7 +14,7 @@ export const createUserService = async (user: IUser) => {
   user.id = id
   const createdUser = await User.create(user)
   if (!createdUser) {
-    throw new Error('Failde to create user!')
+    throw new ApiError(400, 'Failde to create user!')
   }
   return createdUser
 }
