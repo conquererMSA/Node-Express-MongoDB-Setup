@@ -6,6 +6,7 @@ import userRouter from './app/modules/users/users.routes'
 import globalErrorHandlers from './Middlewares/GlobalErrorHandlers'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import ApiError from './errors/ApiError'
+import academicRoutes from './app/modules/academicSemester/academicSemisterRoutes'
 const app: Application = express()
 app.use(cors())
 
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }))
 
 //Application routes
 app.use('/api/v1/users', userRouter)
+app.use('/api/v1/semister', academicRoutes)
 // //testing route
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {
 //   //   throw new Error('Coustom error in app.ts')

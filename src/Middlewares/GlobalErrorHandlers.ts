@@ -6,6 +6,8 @@ import handleValidationError from '../errors/ValidationErrorHandler'
 import ApiError from '../errors/ApiError'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { errorLogger } from '../shared/logger'
+import { ZodError } from 'zod'
+import { zodErrorHandler } from '../errors/zodErrorHandler'
 
 // type IGenericErrorMessage = {
 //   path: string
@@ -26,6 +28,11 @@ const globalErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
     statusCode = simplifiedError.statusCode
     message = simplifiedError.message
     errorMessages = simplifiedError.errorMessages //array of IGenericErrorMessages
+  } else if (error instanceof ZodError) {
+    const zodSimpleError = zodErrorHandler(error)
+    statusCode = zodSimpleError.statusCode
+    message = zodSimpleError.message
+    errorMessages = zodSimpleError.errorMessages
   } else if (error instanceof Error) {
     message = error?.message
     errorMessages = error?.message

@@ -19,6 +19,41 @@
             "date": 1708363069104,
             "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\23-19-02-2024-error.log",
             "hash": "b75d1f49b7001c01f8ed2ccdac6a1a94f34108170e669fdebd57c8e566122e9f"
+        },
+        {
+            "date": 1708419144742,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\14-20-02-2024-error.log",
+            "hash": "0dee89c17aa97e65b0f1a00106ff7c5245b2b9f4359f8f366684e738d8a3d026"
+        },
+        {
+            "date": 1708420246806,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\15-20-02-2024-error.log",
+            "hash": "ca3e88fc2d27ae4248dc0283906eb50726c61559194a28b12e7d46fa069403fc"
+        },
+        {
+            "date": 1708425476123,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\16-20-02-2024-error.log",
+            "hash": "d66192aafe1a713e7506d77449e0bfbed7f3eb39012fec2f78e31eb2151ac16c"
+        },
+        {
+            "date": 1708436188609,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\19-20-02-2024-error.log",
+            "hash": "1b56a06a4cddcb6923804c78a8a2cb99e993183965910dfadd5c44cc5a8b4af9"
+        },
+        {
+            "date": 1708440215705,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\20-20-02-2024-error.log",
+            "hash": "2c9488675e38a5feeae45e9b2cb680c3aae41a80465f2b6b3a4d671c12f5964c"
+        },
+        {
+            "date": 1708443642885,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\21-20-02-2024-error.log",
+            "hash": "e3f6e27fa3ed576724ba31bd1ef30c2ae6a61992989990e9af481231f221e881"
+        },
+        {
+            "date": 1708445760904,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\22-20-02-2024-error.log",
+            "hash": "1fca0412ce3053d4c4c4bf8afad4a28811256cde8bcebf36e4ecfb9226410c95"
         }
     ],
     "hashType": "sha256"
