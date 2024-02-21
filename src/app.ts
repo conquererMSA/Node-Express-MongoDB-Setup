@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import express, { Application, NextFunction } from 'express'
+import express, { Application, NextFunction, Response, Request } from 'express'
 import cors from 'cors'
 import userRouter from './app/modules/users/users.routes'
 import globalErrorHandlers from './Middlewares/GlobalErrorHandlers'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import ApiError from './errors/ApiError'
 import academicRoutes from './app/modules/academicSemester/academicSemisterRoutes'
+import httpStatus from 'http-status'
 const app: Application = express()
 app.use(cors())
 
@@ -39,4 +40,18 @@ app.use('/api/v1/semister', academicRoutes)
 // })
 //Global Error Handler
 app.use(globalErrorHandlers)
+
+//handle not route found
+app.use('*', (req: Request, res: Response) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    success: false,
+    message: 'Invalid Request',
+    errorMessages: [
+      {
+        path: req.originalUrl,
+        message: 'Route not found',
+      },
+    ],
+  })
+})
 export default app

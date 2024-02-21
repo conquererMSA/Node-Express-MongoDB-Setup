@@ -1,8 +1,13 @@
 import { Request, Response, NextFunction, RequestHandler } from 'express'
-import { createSemisterService } from './academicSemisterService'
+import {
+  IPaginationOptions,
+  createSemisterService,
+  getAllSemisterService,
+} from './academicSemisterService'
 import { catchConAsync } from '../../../shared/catchConAsync'
 import { sendConResponse } from '../../../shared/sendResponse'
 import status from 'http-status'
+import { pickQueryParam } from '../../../shared/pickQueryParam'
 //cathConAsync use korar age controller evabe chilo
 // export const createAcademicSemiCon: RequestHandler = async (req, res, next) => {
 //   try {
@@ -30,6 +35,36 @@ export const createAcademicSemiCon: RequestHandler = catchConAsync(
       statusCode: status.OK,
       message: 'Semister create successfully!',
       data: createdSemister,
+    })
+  },
+)
+export const getAllSemisterCon: RequestHandler = catchConAsync(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async (req, res, next) => {
+    //req.query = { page: 1, limit: 2, sortBy: undefined, sortOrder: undefined }
+    // const paginationOptions: IPaginationOptions = {
+    //   page: Number(req.query.page),
+    //   limit: Number(req.query.limit),
+    //   sortBy: req.query.sortBy as string, //sortBy ParsedQs and string[] hoyeo aste pare. sortBy and sortOrder kivabe asbe ta frontend er upor nirbor korbe
+    //   sortOrder: req.query.sortOrder as string, ////sortORder ParsedQs and string[] hoyeo aste pare. sortOrder and sortBy kivabe asbe ta frontend er upor nirbor korbe
+    // }
+    // eslint-disable-next-line no-console
+    // console.log(paginationOptions)
+    const queryOptionObj: IPaginationOptions = pickQueryParam(req.query, [
+      'page',
+      'limit',
+      'sortOrder',
+      'sortBy',
+    ])
+    // eslint-disable-next-line no-console
+    // console.log(queryOptionObj)
+
+    const semisters = await getAllSemisterService(queryOptionObj)
+    sendConResponse(res, {
+      // meta:semisters.meta
+      statusCode: status.OK,
+      message: 'semister data successfully retrieved',
+      data: semisters,
     })
   },
 )
