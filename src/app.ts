@@ -8,6 +8,7 @@ import globalErrorHandlers from './Middlewares/GlobalErrorHandlers'
 import ApiError from './errors/ApiError'
 import academicRoutes from './app/modules/academicSemester/academicSemisterRoutes'
 import httpStatus from 'http-status'
+import facultyRoutes from './app/modules/academicFaculty/facultyRoutes'
 const app: Application = express()
 app.use(cors())
 
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: true }))
 //Application routes
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/semister', academicRoutes)
+app.use('/api/v1/faculty', facultyRoutes)
 // //testing route
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {
 //   //   throw new Error('Coustom error in app.ts')

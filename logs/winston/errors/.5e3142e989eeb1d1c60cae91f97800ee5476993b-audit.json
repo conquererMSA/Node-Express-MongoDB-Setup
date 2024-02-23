@@ -89,6 +89,66 @@
             "date": 1708516851151,
             "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\18-21-02-2024-error.log",
             "hash": "9501782c338043033dcf5182468f8ab1da8d9ef0bef9aa6de0bc05830c0a5f19"
+        },
+        {
+            "date": 1708590312284,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\14-22-02-2024-error.log",
+            "hash": "4e3d3a6d4095a2260ed763c5981952923c6e2ec06d4932a23766a1bc51b4ea86"
+        },
+        {
+            "date": 1708592963665,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\15-22-02-2024-error.log",
+            "hash": "df81d7cc94879c4616f11d366585ee6ac97fbcd982933b7beca247b45af64cea"
+        },
+        {
+            "date": 1708596656842,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\16-22-02-2024-error.log",
+            "hash": "0e05a27dd673755e110c11a3e8ee3b7d37a08b75a90c89dfad044ad2413fb957"
+        },
+        {
+            "date": 1708599652845,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\17-22-02-2024-error.log",
+            "hash": "8f99fcf2264a1f2de8899cdfe479a34af96aa071c910b629753d6adbe4bad6cb"
+        },
+        {
+            "date": 1708603504938,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\18-22-02-2024-error.log",
+            "hash": "81a05d33ad7a236dc7a8f4c2ca1061a3c8d1903a2f55209aca9a3002591ba1cc"
+        },
+        {
+            "date": 1708606847513,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\19-22-02-2024-error.log",
+            "hash": "0fae3b65d88e42ea7d9968cfee9db5581cfaf3c39b94a0b3544631ee517aa3f3"
+        },
+        {
+            "date": 1708610562790,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\20-22-02-2024-error.log",
+            "hash": "8d03d3e97ce2fb5709cbeeb3f4693039c0b6c4cc1b5b5cf179dffb9f4ee7d0a0"
+        },
+        {
+            "date": 1708614094327,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\21-22-02-2024-error.log",
+            "hash": "9119428cba0772df6524187480c5271150eeced3da820879d17a220ab031cfd0"
+        },
+        {
+            "date": 1708617884910,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\22-22-02-2024-error.log",
+            "hash": "94ed951a341a28cf33e0f550c743c8abe208e765c61071e6ffe47c297a473231"
+        },
+        {
+            "date": 1708621203504,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\23-22-02-2024-error.log",
+            "hash": "9ac6e6a0304bcd320459d7aab2356e95e3cb13a0b1f6f7755801ae602b5a46d0"
+        },
+        {
+            "date": 1708624836539,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\00-23-02-2024-error.log",
+            "hash": "cb2293943740e0c4445bf9310880b38d0d8e50c573fe004553f4aea4214375e1"
+        },
+        {
+            "date": 1708677114344,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\14-23-02-2024-error.log",
+            "hash": "902b5202a0c107141c843459ad9423a683c7e135f937ffca47a41d638d9160a6"
         }
     ],
     "hashType": "sha256"

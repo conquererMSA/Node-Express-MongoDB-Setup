@@ -35,6 +35,7 @@ async function connectDB() {
   process.on('unhandledRejection', error => {
     console.log(
       'Unhandled rejection happend. We are closing the server......off',
+      error,
     )
     if (server) {
       server.close(() => {
@@ -49,6 +50,7 @@ async function connectDB() {
 }
 
 connectDB()
+
 // console.log(x) //for uncaughtException //uncaughtException app er zekuno zaygay hote pare
 //handled Signal Termination
 //SIGTERM is process by process manager like pm2

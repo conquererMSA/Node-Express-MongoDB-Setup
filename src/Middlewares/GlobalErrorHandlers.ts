@@ -8,6 +8,7 @@ import ApiError from '../errors/ApiError'
 import { errorLogger } from '../shared/logger'
 import { ZodError } from 'zod'
 import { zodErrorHandler } from '../errors/zodErrorHandler'
+import handleCastError from '../errors/CastErrorHandlers'
 
 // type IGenericErrorMessage = {
 //   path: string
@@ -28,6 +29,12 @@ const globalErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
     statusCode = simplifiedError.statusCode
     message = simplifiedError.message
     errorMessages = simplifiedError.errorMessages //array of IGenericErrorMessages
+  } else if (error?.name === 'CastError') {
+    // res.status(500).json({ error: error })//castError ekta object
+    const castSimpleError = handleCastError(error)
+    statusCode = castSimpleError.statusCode
+    message = castSimpleError.message
+    errorMessages = castSimpleError.errorMessages
   } else if (error instanceof ZodError) {
     const zodSimpleError = zodErrorHandler(error)
     statusCode = zodSimpleError.statusCode

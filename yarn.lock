@@ -1536,6 +1536,11 @@ graphemer@^1.4.0:
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
+gs@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/gs/-/gs-0.0.2.tgz#b342dd8619b98f991da88463bdd726cd1f06111e"
+  integrity sha512-2GBoBlK6nI2XVBf1u6MkJ6pe0nlRKQumcmc995foSeVtyHVkvqY7gsKfki3szvT4tMB4JYNfq8NkK+nT0HJtgg==
+
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/has-bigints/-/has-bigints-1.0.2.tgz#0871bd3e3d51626f6ca0966668ba35d5602d6eaa"
