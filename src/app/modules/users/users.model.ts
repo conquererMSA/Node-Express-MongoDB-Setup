@@ -1,15 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { model, Schema, Model } from 'mongoose'
+import { model, Schema, Model, Types } from 'mongoose'
 import { IUser } from './users.interface'
 import { UserModel } from './users.interface'
 // type UserModel = Model<IUser, object>
 // type UserModel = Model<IUser, Record<string, unknown>> //better option
 const userSchema = new Schema<IUser>(
   {
-    name: {
-      type: String,
-      required: true,
-    },
     id: {
       type: String,
       required: true,
@@ -21,6 +17,9 @@ const userSchema = new Schema<IUser>(
     password: {
       type: String,
       required: true,
+    },
+    studentId: {
+      type: Types.ObjectId,
     },
   },
   { timestamps: true },

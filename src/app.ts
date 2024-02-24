@@ -9,6 +9,9 @@ import ApiError from './errors/ApiError'
 import academicRoutes from './app/modules/academicSemester/academicSemisterRoutes'
 import httpStatus from 'http-status'
 import facultyRoutes from './app/modules/academicFaculty/facultyRoutes'
+import deptRoutes from './app/modules/academicDepartment/departmentRoutes'
+import studentRoutes from './app/modules/student/studentRoutes'
+// import { autoGenaretedUserId } from './app/modules/users/users.utils'
 const app: Application = express()
 app.use(cors())
 
@@ -30,6 +33,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/semister', academicRoutes)
 app.use('/api/v1/faculty', facultyRoutes)
+app.use('/api/v1/department', deptRoutes)
+app.use('/api/v1/student', studentRoutes)
+
 // //testing route
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {
 //   //   throw new Error('Coustom error in app.ts')
@@ -56,4 +62,16 @@ app.use('*', (req: Request, res: Response) => {
     ],
   })
 })
+// const testSemister = {
+//   title: 'Autumn',
+//   code: '01',
+//   year: '2017',
+//   startMonth: 'May',
+//   endMonth: 'April',
+// }
+// const testId = async () => {
+//   const id = await autoGenaretedUserId(testSemister)
+//   console.log(id)
+// }
+// testId()
 export default app

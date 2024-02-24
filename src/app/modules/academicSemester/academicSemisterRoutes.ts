@@ -11,7 +11,6 @@ import {
   getSingleSemisterCon,
   updateASemisterCon,
 } from './academicSemisterController'
-
 const academicRoutes = express.Router()
 academicRoutes
   .patch(
