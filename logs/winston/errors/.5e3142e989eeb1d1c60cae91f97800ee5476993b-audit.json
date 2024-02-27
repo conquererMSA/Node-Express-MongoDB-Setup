@@ -274,6 +274,11 @@
             "date": 1709026987199,
             "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\15-27-02-2024-error.log",
             "hash": "1ac079f9857cfb8afdd643ea1a8e66429958ae389b23e3ce1b3d3f0af56e253f"
+        },
+        {
+            "date": 1709046943524,
+            "name": "C:\\Next-Level\\Express-MongoDB Initial Setup\\logs\\winston\\errors\\21-27-02-2024-error.log",
+            "hash": "1c2fd740077e0f5078bfdfca96f77ed9c6d8ade657d04d3f730685c73bd07818"
         }
     ],
     "hashType": "sha256"

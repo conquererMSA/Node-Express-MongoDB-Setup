@@ -4,6 +4,7 @@ import { User } from '../users/users.model'
 import jwt, { Secret, JwtPayload } from 'jsonwebtoken'
 import config from '../../../config'
 import { LoginUserResponse } from '../users/users.interface'
+import bcrypt from 'bcrypt'
 
 export const loginUserService = async (
   id: string,
@@ -66,4 +67,36 @@ export const createNewAccessTokenService = async (token: string) => {
     { expiresIn: config.jwt.expires_in },
   )
   return newAccessToken
+}
+export const changePasswordService = async (
+  oldPass: string,
+  newPass: string,
+  verifiedUser: JwtPayload,
+) => {
+  const user = new User()
+  const userData = await user.isUserExist(verifiedUser?.id)
+  if (!userData?.id) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User does not exist')
+  }
+  //check password match or not
+  const isPassMatched = await user.isPasswordMatch(
+    oldPass,
+    userData?.password as string,
+  )
+  if (!isPassMatched) {
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'Invalid authorization')
+  }
+  //hash newPassword and save user
+  const newHashPassword = await bcrypt.hash(
+    newPass,
+    Number(config.brcrypt_salt),
+  )
+  user.password = newHashPassword
+  user.needsPassChanged = false
+  //update user and save to db
+  user.save()
+  return {
+    ...user,
+    needsPasswordChanged: false,
+  }
 }

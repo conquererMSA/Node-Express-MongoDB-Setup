@@ -7,7 +7,7 @@ import config from '../config'
 export const authChecking = (...roles: string[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const token = req.headers.authorization
+      const token = req.headers?.Authorization as string
       if (!token) {
         throw new ApiError(httpStatus.UNAUTHORIZED, 'Token must be provided')
       }

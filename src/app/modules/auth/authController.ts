@@ -2,10 +2,16 @@ import httpStatus from 'http-status'
 import config from '../../../config'
 import { catchConAsync } from '../../../shared/catchConAsync'
 import { sendConResponse } from '../../../shared/sendResponse'
-import { createNewAccessTokenService, loginUserService } from './authService'
+import {
+  changePasswordService,
+  createNewAccessTokenService,
+  loginUserService,
+} from './authService'
 import { parseExpiresIn } from './caculateExpiresIn'
+import { RequestHandler } from 'express'
+import { JwtPayload } from 'jsonwebtoken'
 
-export const loginUserCon = catchConAsync(async (req, res) => {
+export const loginUserCon: RequestHandler = catchConAsync(async (req, res) => {
   const tokens = await loginUserService(req.body.id, req.body.loginPass)
   const { refreshToken, accessToken, needsPassChanged } = tokens
   const expiresInString = config.jwt.refresh_expires_in
@@ -31,11 +37,25 @@ export const loginUserCon = catchConAsync(async (req, res) => {
   })
 })
 
-export const newAccessTokenCon = catchConAsync(async (req, res) => {
-  const newAccessToken = await createNewAccessTokenService(req.cookies)
+export const newAccessTokenCon: RequestHandler = catchConAsync(
+  async (req, res) => {
+    const newAccessToken = await createNewAccessTokenService(req.cookies)
+    sendConResponse(res, {
+      statusCode: 200,
+      message: 'create new token successfully',
+      data: { newAccessToken },
+    })
+  },
+)
+export const changePassCon: RequestHandler = catchConAsync(async (req, res) => {
+  const data = await changePasswordService(
+    req.body?.oldPass,
+    req.body?.newPass,
+    req.verifiedUser as JwtPayload,
+  )
   sendConResponse(res, {
-    statusCode: 200,
-    message: 'create new token successfully',
-    data: { newAccessToken },
+    statusCode: httpStatus.OK,
+    message: 'Password chaned successfully',
+    data: data,
   })
 })
