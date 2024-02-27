@@ -44,8 +44,7 @@ export const createAcademicSemiCon: RequestHandler = catchConAsync(
   },
 )
 export const getAllSemisterCon: RequestHandler = catchConAsync(
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async (req, res, _next) => {
+  async (req, res) => {
     //req.query = { page: 1, limit: 2, sortBy: undefined, sortOrder: undefined }
     // const paginationOptions: IPaginationOptions = {
     //   page: Number(req.query.page),

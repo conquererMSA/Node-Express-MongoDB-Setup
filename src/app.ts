@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import express, { Application, NextFunction, Response, Request } from 'express'
+import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import userRouter from './app/modules/users/users.routes'
 import globalErrorHandlers from './Middlewares/GlobalErrorHandlers'
@@ -11,6 +12,7 @@ import httpStatus from 'http-status'
 import facultyRoutes from './app/modules/academicFaculty/facultyRoutes'
 import deptRoutes from './app/modules/academicDepartment/departmentRoutes'
 import studentRoutes from './app/modules/student/studentRoutes'
+import authRoutes from './app/modules/auth/authRoutes'
 // import { autoGenaretedUserId } from './app/modules/users/users.utils'
 const app: Application = express()
 app.use(cors())
@@ -18,6 +20,7 @@ app.use(cors())
 //parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
 
 //**************************/
 // eslint-disable-next-line no-console, no-undef
@@ -35,6 +38,7 @@ app.use('/api/v1/semister', academicRoutes)
 app.use('/api/v1/faculty', facultyRoutes)
 app.use('/api/v1/department', deptRoutes)
 app.use('/api/v1/student', studentRoutes)
+app.use('/api/v1/auth', authRoutes)
 
 // //testing route
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {

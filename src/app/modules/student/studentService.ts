@@ -3,7 +3,7 @@ import config from '../../../config'
 import AcademicSemister from '../academicSemester/model.academicSemister'
 import { IUser } from '../users/users.interface'
 import { autoGenaretedStudentId } from './student.utils'
-import { TStudent, TUserName } from './studentInterface'
+import { TStudent } from './studentInterface'
 import { Student } from './studentModel'
 import ApiError from '../../../errors/ApiError'
 import httpStatus from 'http-status'
@@ -80,17 +80,46 @@ export const updateStudentService = async (
   id: string,
   student: Partial<TStudent>,
 ): Promise<TStudent | null> => {
-  const { name, localGuardian, guardian, ...restStudet } = student
-  const updateStudent: Partial<TStudent> = restStudet
+  const { name, localGuardian, guardian, ...restStudent } = student
+  // console.log('name', name) //name undefined
+  // console.log('localGuardian', localGuardian) //takle object na thakle undefined
+  // console.log('Guardian', guardian) //takle obj na thakle undefined
+  // console.log('rest data', restStudent) //rest data {bloodGroup:'AB+',email:'pp@gmail.com'}
+
+  const updateStudent: Partial<TStudent> = { ...restStudent }
+  console.log(updateStudent) //rest data {bloodGroup:'AB+',email:'pp@gmail.com'}
+
   const isExist = await Student.findOne({ userId: id })
   if (!isExist) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Student could not found')
   }
+
   if (name && Object.keys(name).length > 0) {
     Object.keys(name).forEach((key: string) => {
-      const nameKey = `name.${key}` as keyof TUserName //name.firstName
+      const nameKey = `name.${key}` //name.firstName
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ;(updateStudent as any)[nameKey] = name[key]
+      ;(updateStudent as any)[nameKey] = name[key as keyof typeof name]
     })
   }
+  if (guardian && Object.keys(guardian).length > 0) {
+    Object.keys(guardian).forEach((key: string) => {
+      const guardianObjKey = `guardian.${key}` //guardian.fatherName
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(updateStudent as any)[guardianObjKey] =
+        guardian[key as keyof typeof guardian]
+    })
+  }
+  if (localGuardian && Object.keys(localGuardian).length > 0) {
+    Object.keys(localGuardian).forEach((key: string) => {
+      const localGuardianKey = `localGuardian.${key}` //localGuardian.name
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(updateStudent as any)[localGuardianKey] =
+        localGuardian[key as keyof typeof localGuardian]
+    })
+  }
+
+  const result = await Student.findOneAndUpdate({ userId: id }, updateStudent, {
+    new: true,
+  })
+  return result
 }

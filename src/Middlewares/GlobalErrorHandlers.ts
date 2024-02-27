@@ -59,6 +59,5 @@ const globalErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
     errorMessages,
     stack,
   })
-  // next()
 }
 export default globalErrorHandlers

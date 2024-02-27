@@ -4,7 +4,9 @@ import { IDepartment } from '../academicDepartment/departmentInterface'
 import { IFaculty } from '../academicFaculty/interface.faculty'
 
 export type TUserName = {
-  [index: string]: string
+  firstName: string
+  middleName: string
+  lastName: string
 }
 
 export type TGuardian = {

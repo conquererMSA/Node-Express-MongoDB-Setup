@@ -1,13 +1,34 @@
 import express from 'express'
-import { createStudentCon } from './student.controller'
+import { createStudentCon, updateStudentCon } from './student.controller'
 import { validateRequest } from '../users/validateRequest'
-import { createStudentValidationSchema } from './studentZodValidation'
+import {
+  createStudentValidationSchema,
+  updateStudentValidationSchema,
+} from './studentZodValidation'
+//030300005
 const studentRoutes = express.Router()
-studentRoutes.post(
-  '/create-student',
-  validateRequest(createStudentValidationSchema),
-  createStudentCon,
-)
+studentRoutes
+  .patch(
+    '/:id',
+    validateRequest(updateStudentValidationSchema),
+    updateStudentCon,
+  )
+  // {
+  //   "updateStudent":{
+  //     "guardian":{
+  //       "fatherName":"iiii"
+  //     },
+  //     "bloodGroup":"AB+",
+  //      "localGuardian":{
+  //       "name":"PSY"
+  //      }
+  //   }
+  // }
+  .post(
+    '/create-student',
+    validateRequest(createStudentValidationSchema),
+    createStudentCon,
+  )
 export default studentRoutes
 
 // {
